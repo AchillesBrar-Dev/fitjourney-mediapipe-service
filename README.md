@@ -1,0 +1,1 @@
+# fitjourney-mediapipe-service
