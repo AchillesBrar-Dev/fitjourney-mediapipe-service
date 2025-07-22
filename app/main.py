@@ -243,6 +243,7 @@ def calculate_posture_score(landmarks: List[Dict]) -> Optional[float]:
         return None
 
 @app.get("/")
+@app.head("/")  # Allow HEAD requests for health checks
 async def root():
     """Health check endpoint."""
     return {
@@ -252,6 +253,7 @@ async def root():
     }
 
 @app.get("/health")
+@app.head("/health")  # Allow HEAD requests for health checks
 async def health_check():
     """Detailed health check."""
     return {
