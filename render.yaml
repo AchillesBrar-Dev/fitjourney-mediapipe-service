@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: fitjourney-mediapipe-service
+    env: python
+    plan: starter # Change to 'standard' or higher for production
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000 
